@@ -1,4 +1,5 @@
 import './style.css';
+import { app } from './app.js';
 
 document.querySelector('#app').innerHTML = `
   <section class='wiki'>
@@ -10,13 +11,14 @@ document.querySelector('#app').innerHTML = `
      <button type='submit' class='submit-btn'>search</button>
     </form>
    </div>
-   <div class='results'>
-    <div class='articles'>
-     <a href='#' target='_blank'>
-      <h4>title</h4>
-      <p>Some text</p>
-     </a>
-    </div>
+   <div  class='results'>
+    
    </div>
   </section>
 `;
+const container = document.querySelector('#articles');
+const form = document.querySelector('.form');
+const input = document.querySelector('.form-input');
+const results = document.querySelector('.results');
+
+app(container, form, input, results);
